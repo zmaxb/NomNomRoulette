@@ -1,4 +1,4 @@
-using FoodSelector.Components;
+using NomNomRoulette.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

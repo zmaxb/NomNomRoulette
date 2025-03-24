@@ -1,7 +1,8 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using NomNomRoulette.Helpers;
 
-namespace FoodSelector.Controllers;
+namespace NomNomRoulette.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -12,17 +13,18 @@ public class RestaurantsController : ControllerBase
     [HttpGet]
     public IActionResult Load()
     {
-        if (!System.IO.File.Exists(_filePath))
-            return NotFound();
+        if (!FileHelper.TryReadJson(_filePath, out var json))
+            return StatusCode(500, "Failed to read settings file");
 
-        var json = System.IO.File.ReadAllText(_filePath);
         return Content(json, "application/json");
     }
 
     [HttpPost]
-    public async Task<IActionResult> Save([FromBody] JsonElement json)
+    public IActionResult Save([FromBody] JsonElement json)
     {
-        await System.IO.File.WriteAllTextAsync(_filePath, json.ToString());
+        if (!FileHelper.TryWriteJson(_filePath, json))
+            return StatusCode(500, "Failed to write settings file");
+
         return Ok();
     }
 }

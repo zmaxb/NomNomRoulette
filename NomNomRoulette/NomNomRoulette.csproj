@@ -4,9 +4,9 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <AssemblyVersion></AssemblyVersion>
-        <Company>zmaxb</Company>
-        <Product>FoodSelector 1.0.0-beta</Product>
+        <Company>NomNom</Company>
+        <Product>NomNom Roulette 1.0.0-beta</Product>
+        <RootNamespace>NomNomRoulette</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
