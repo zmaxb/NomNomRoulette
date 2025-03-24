@@ -1,0 +1,18 @@
+[
+  { "name": "🍔 Five Guys", "color": "#C62828" },
+  { "name": "🍟 Shake Shack", "color": "#66BB6A" },
+  { "name": "🌮 Taco Bell", "color": "#AB47BC" },
+  { "name": "🍕 Domino's", "color": "#1E88E5" },
+  { "name": "🍗 Popeyes", "color": "#FF7043" },
+  { "name": "🥗 Pret A Manger", "color": "#AD1457" },
+  { "name": "🥪 Subway", "color": "#2E7D32" },
+  { "name": "🍗 Nando’s", "color": "#C2185B" },
+  { "name": "🍔 Burger King", "color": "#F57C00" },
+  { "name": "🍝 Vapiano", "color": "#D84315" },
+  { "name": "🥞 IHOP", "color": "#1565C0" },
+  { "name": "🍩 Dunkin’", "color": "#FF9800" },
+  { "name": "🍔 Wendy’s", "color": "#E53935" },
+  { "name": "🍜 Wagamama", "color": "#37474F" },
+  { "name": "🥖 Paul", "color": "#3E2723" },
+  { "name": "🥘 Le Pain Quotidien", "color": "#6D4C41" }
+]

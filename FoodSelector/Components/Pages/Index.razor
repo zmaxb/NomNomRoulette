@@ -1,0 +1,89 @@
+﻿@rendermode InteractiveServer
+@page "/"
+@inject HttpClient Http
+
+<div id="roulette-container">
+    <canvas id="roulette" width="700" height="700"></canvas>
+</div>
+
+<div class="text-center mt-4">
+    <button class="btn btn-primary btn-lg" onclick="spinRoulette()">Let’s spin</button>
+    <button class="btn btn-primary btn-lg" @onclick="LoadJson">⚙️ Settings</button>
+</div>
+
+<h2 class="text-center mt-4 text-success" id="result"></h2>
+
+@if (showEditor)
+{
+    <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                background-color: rgba(0,0,0,0.7); z-index: 10000;
+                display: flex; align-items: center; justify-content: center;">
+        <div
+            style="background-color: #1a1a1a; color: white; padding: 30px; border-radius: 12px; width: 700px; max-width: 90%;">
+            <h5>Edit Restaurants</h5>
+            <textarea class="form-control mb-3" style="min-height: 300px;" @bind="jsonText"></textarea>
+            <div class="text-end">
+                <button class="btn btn-secondary me-2" @onclick="() => showEditor = false">Cancel</button>
+                <button class="btn btn-success" @onclick="SaveJson">Save</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Js.InvokeVoidAsync("initRoulette");
+        }
+    }
+
+    [Inject] private IJSRuntime Js { get; set; } = null!;
+}
+
+@code {
+    private bool showEditor = false;
+    private string jsonText = "";
+
+    private async Task LoadJson()
+    {
+        try
+        {
+            jsonText = await Http.GetStringAsync("/api/restaurants");
+            showEditor = true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            await Js.InvokeVoidAsync("alert", "Failed to load JSON");
+        }
+    }
+
+    private async Task SaveJson()
+    {
+        try
+        {
+            var content = new StringContent(jsonText, System.Text.Encoding.UTF8, "application/json");
+            var response = await Http.PostAsync("/api/restaurants", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                showEditor = false;
+                await Js.InvokeVoidAsync("initRoulette");
+            }
+            else
+            {
+                await Js.InvokeVoidAsync("alert", "Failed to save JSON");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            await Js.InvokeVoidAsync("alert", "Error saving JSON");
+        }
+    }
+
+}
