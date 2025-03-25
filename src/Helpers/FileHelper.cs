@@ -14,8 +14,9 @@ public static class FileHelper
             content = File.ReadAllText(path);
             return true;
         }
-        catch
+        catch(Exception ex)
         {
+            Console.WriteLine(ex.Message);
             return false;
         }
     }
@@ -27,8 +28,9 @@ public static class FileHelper
             File.WriteAllText(path, json.ToString(), Encoding.UTF8);
             return true;
         }
-        catch
+        catch(Exception ex)
         {
+            Console.WriteLine(ex.Message);
             return false;
         }
     }
