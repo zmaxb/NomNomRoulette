@@ -28,7 +28,7 @@
 1. Clone the repository:
     ```bash
     git clone https://github.com/zmaxb/NomNomRoulette.git
-    cd NomNomRoulette
+    cd NomNomRoulette/NomNomRoulette
     ```
 
 2. Run the server:
