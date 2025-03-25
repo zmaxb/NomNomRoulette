@@ -7,11 +7,15 @@
         <Company>NomNom</Company>
         <Product>NomNom Roulette 1.0.0-beta</Product>
         <RootNamespace>NomNomRoulette</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
       <Content Update="wwwroot\data\restaurants.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
 

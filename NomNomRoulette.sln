@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomNomRoulette", "NomNomRoulette\NomNomRoulette.csproj", "{F623BDB6-BDAB-47BF-85DE-D3C890B347D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomNomRoulette", "src\NomNomRoulette.csproj", "{06F77B2D-42A2-4AD0-AB63-DFA097B34179}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F623BDB6-BDAB-47BF-85DE-D3C890B347D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F623BDB6-BDAB-47BF-85DE-D3C890B347D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F623BDB6-BDAB-47BF-85DE-D3C890B347D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F623BDB6-BDAB-47BF-85DE-D3C890B347D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F77B2D-42A2-4AD0-AB63-DFA097B34179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F77B2D-42A2-4AD0-AB63-DFA097B34179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F77B2D-42A2-4AD0-AB63-DFA097B34179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F77B2D-42A2-4AD0-AB63-DFA097B34179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
